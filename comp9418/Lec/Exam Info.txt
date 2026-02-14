@@ -1,0 +1,18 @@
+Information About The Final Exam
+This is important information about the final exam. Please post all your questions (technical or otherwise) about the exam here.
+
+Duration
+2 hours.
+
+What To Bring
+Candidates may bring UNSW approved calculators to the examination. No other materials or notes may be brought by candidates. 
+Exam Structure
+The exam will contain exactly 4 questions. Each question is worth 25 marks for a total of 25x4=100 marks.
+
+Examinable Material 
+All the material studied during the course (lecture slides, compulsory reading, tutorials, assessment) is examinable. As the exam is paper-based, there will not be coding exercises. Only the following topics are exceptions to this rule:
+
+Sampling [Week 6]: There will not be a question on the exam regarding this topic.
+Continuous latent variables [Week 7]: There will not be a question on the exam regarding this topic.
+Types of Questions
+You can expect to be asked conceptual questions, mathematical questions (i.e. mathematical derivations) and short calculations (so you may need a calculator for this). You do not need to memorise Gaussian identities such as the expression for the conditional distribution given a joint Gaussian or the integral of the product of two Gaussians. You will be given these if there are questions that require them. However, well-known expressions that you should be familiar with (e.g. the expression for a joint Gaussian distribution) will not be given.

@@ -1,0 +1,49 @@
+<mxfile host="65bd71144e">
+    <diagram id="7SdmRLbA22GkrnLxML2e" name="Page-1">
+        <mxGraphModel dx="1518" dy="665" grid="0" gridSize="10" guides="1" tooltips="0" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="4" value="" style="edgeStyle=none;html=1;align=center;" edge="1" parent="1" source="2" target="3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="Text string" style="whiteSpace=wrap;html=1;align=center;flipH=1;" vertex="1" parent="1">
+                    <mxGeometry x="-132" y="122" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="edgeStyle=none;html=1;align=center;" edge="1" parent="1" source="3" target="5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="parsing and translation" style="whiteSpace=wrap;html=1;align=center;flipH=1;" vertex="1" parent="1">
+                    <mxGeometry x="-132" y="216" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="edgeStyle=none;html=1;align=center;" edge="1" parent="1" source="5" target="7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="optimisation" style="whiteSpace=wrap;html=1;align=center;flipH=1;" vertex="1" parent="1">
+                    <mxGeometry x="-132" y="319" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="" style="edgeStyle=none;html=1;align=center;" edge="1" parent="1" source="7" target="9">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="execution" style="whiteSpace=wrap;html=1;align=center;flipH=1;" vertex="1" parent="1">
+                    <mxGeometry x="-132" y="430" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="ouput" style="whiteSpace=wrap;html=1;align=center;flipH=1;" vertex="1" parent="1">
+                    <mxGeometry x="-132" y="520" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="text string and sql querying =&amp;gt; expression tree for a relational algrebra expression" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="41" y="230" width="452" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="RA=&amp;gt;sequence of DBMS-sepecific relational operations" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="41" y="340" width="314" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="set of result tuples =&amp;gt; stream of formatted tuples" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="41" y="537" width="275" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="query plan(sequence of DBMS-specific relational operations) =&amp;gt; set of result tuples" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="41" y="439" width="459" height="26" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

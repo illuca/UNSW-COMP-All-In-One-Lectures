@@ -1,0 +1,9 @@
+# matrix multiplication chain
+Only if we know opt(i,k) and opt(k,j) can we solve opt(i,j).
+so We need to carefully choose the order.
+
+The order should be increasing order of j-i.
+
+If you want to understand dynamic programming well, it's a good idea to implement algorithms that describe on slides in your favourite language.
+
+

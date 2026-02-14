@@ -1,0 +1,279 @@
+
+# network flow
+residual network的正反箭头都是表示反悔，表示选择权。
+如果原本的network flow中v0--1/10-->v1
+则在residual nework中，v0可以反悔v0--9-->v1
+也可以反悔v0<---1---v1
+
+
+# min cut
+
+keep cutting until you are condifident that it is the min cut.
+这里的min cut就表示瓶颈，因为瓶颈决定max flow.
+
+flow of any cut(S,T) = edges with direction S->T = all edges in cut - edges(T->S)
+
+这里的cut表示那个切面划过的所有edges
+
+
+# ford-fulkerson algorithm
+You keep adding augmenting paths as long as you can util there is no augmenting path.
+
+## what is augmenting path?
+An augmenting path is a path from the source to the sink where the flow can be increased along each edge of the path without exceeding the capacity of that edge.
+
+When ford fulkerson terminates, all forward edges are fully occupied and backwards edges are emtpy.
+
+And min cut also has this phenomenon.
+
+
+# time complexity of Ford-Fulkerson Algorithm
+
+Every time we find a augmenting path, we need to DFS from source to sink. It will cost O(V+E) time. 
+Because num of vertices is always less than or equal to num of edges+1, thus O(V+E)=O(E).
+
+The num of augmenting path is decided by max flow.
+
+Thus total time complexity is O(Ef).
+
+## let's talk about the value of f
+
+The input is vertices and edges.
+vertices take O(num of vertices) bits.
+edges take O(num of edges) bits.
+
+In worst case, the max flow can be num of vertices * edge capacity at most, namely VC.
+
+Thus in worst case, O(Ef)=O(EV).
+
+O(EV) is not good. 
+
+In extreme case, each augmenting path can only increase flow by 1 unit.
+
+Thus here comes the Edmonds-Karp Algorithm.
+
+
+# Edmonds-Karp Algorithm
+
+Ford-Fulkerson does not tell you how to choose augmenting path, it just tells you to keep finding util there is no augmenting path.
+
+Edmonds-Karp tells you to always choose the augmenting path with fewest edges.
+
+
+edmond always choose the shortest path. After adding it to flow, it may creates backward edges. but next iteration, it will choose the next shortest, thus it can't undo all previous paths. thus this unique path is locked in flow.
+thus flow always grow, thus each iteration at least increases flow by one unit.
+
+compared to edmonds, ford fulkerson may undo the previous path, thus may not terminate.
+
+## time complexity of Edmonds-Karp
+Each agumenting path takes O(E) time to find.
+The number of augmenting paths is O(VE).
+
+Thus total time complexity is O(VE^2)
+
+But sometimes, O(Ef)<O(VE^2), thus you need to compare.
+
+# faster max flow algorithms
+
+THere are more efficient algorithms, like Dinic in O(V^2E) and Preflow-Push in O(V^3).
+But in most cases, Edmonds-Karp is not that terrible. It is faster than O(VE^2).
+
+In March 2022, Chen made an algorithm with linear time.
+
+# networks with multiple sources and sinks
+
+You can create a super source and connect it to all sources, by edges of inifinite capacity.
+
+And create a super sink and connect it to all sinks, by edges of inifinite capacity.
+
+# networks with vertex capacities
+
+We know each edge has capacity. But sometimes, vertex also has capacity.
+
+Thus flow through that vertex should be restricted by capacity of vertex.
+Namely, the flow enters vertex <= capacity of vertex
+Also, the flow leaves vertex <= capacity of vertex.
+
+Thus we can do a trick. We split the vertex with capacity into two vertex with no capacity.
+
+--1->v(10)--1-->
+
+convert is to:
+
+--1-->Vin--10-->Vout--1-->
+
+
+# example: Movie rental
+
+You have a movie rental agency.
+
+You have k movie in stock and each moive has many copies.
+
+There are n customers. 
+Everyone can only rent 5 movies at most.
+
+Now you should create an algorithm to rent as many movies as possible.
+
+Construct a flow network:
+
+source and sink.
+
+each customer is a vertex.
+Connect source with customer j by edge of 5.
+
+Connect customer i with movies he wants to see by edge of 1.
+
+each movie is a vertex.
+Connect sink with movie i by edge of mi.
+
+# eg: cargo allocation
+A ship has storage space.
+The space is in the form of rectangular grid.
+It has n rows and m columns.
+
+Some cells cannot storage things.
+
+To make ship be stable, each row cannot exceed the weight and so does each column.
+
+Task: Design algorithm to allocate the maxmial weight and ship still be stable.
+
+
+construct a flow network with:
+source s and sink t.
+
+a vertex ui for each row i and a vertex vj for each column j.
+
+For each i, an edge from s to vi with capacity Cr(i)
+For each j, an edge from vj to t with capacity Cc(j)
+
+For each cell (i,j) is not a pillar, an edge from vi to vj with capacity C(i,j)
+
+
+
+# eg: vertex-disjoint paths
+There is a directed graph with n vertices and m edges.
+
+Among these vertices, the num of red vertices is r, the num of blue are b, the num of black is n-r-b.
+
+Red vertices have only outgoing edges, blue edges have only incoming edges.
+
+Task: Find as many vertex-disjoint paths as possible.
+
+
+
+introduce capacity to the vertice.
+Each black vertex split into two vertices.
+
+Construct a flow network with:
+
+super-source s joined to each red vertex,
+each blue vertex joined to super-sink t,
+for each black vertex, two vertices v_in and v_out joined by an edge.
+
+edges to a black vertex drawn to the corresponding in-vertex and 
+edges from a black vertex drawn from the correspoinding out-vertex
+
+All edges has capacity 1.
+
+
+# bipartite graphs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

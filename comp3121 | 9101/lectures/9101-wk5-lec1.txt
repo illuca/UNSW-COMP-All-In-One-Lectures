@@ -1,0 +1,7 @@
+network flow is used to solve pbl about maximium and minimum.
+
+Network flow is a directed graph.
+Every node represents a location. 
+Every edge represents the path between them.
+Every edge has a capacity, which is the maximum flow it can handle.
+
